@@ -13,11 +13,14 @@ using Microsoft.EntityFrameworkCore;
 using IdentityMiddlewareSample.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityMiddlewareSample.Middlewares;
 
 namespace IdentityMiddlewareSample
 {
     public class Startup
     {
+        private IServiceCollection services;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +31,8 @@ namespace IdentityMiddlewareSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            this.services = services;
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -65,6 +70,8 @@ namespace IdentityMiddlewareSample
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            app.UseMiddleware<EmailMiddleware>(services);
 
             app.UseMvc(routes =>
             {
