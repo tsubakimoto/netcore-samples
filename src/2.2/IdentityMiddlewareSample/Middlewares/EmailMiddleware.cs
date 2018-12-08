@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
@@ -10,18 +9,14 @@ namespace IdentityMiddlewareSample.Middlewares
     {
         private readonly RequestDelegate next;
         private readonly ILogger<EmailMiddleware> logger;
-        private readonly UserManager<IdentityUser> userManager;
 
-        public EmailMiddleware(RequestDelegate next, ILogger<EmailMiddleware> logger, IServiceCollection services)
+        public EmailMiddleware(RequestDelegate next, ILogger<EmailMiddleware> logger)
         {
-            var serviceProvider = services.BuildServiceProvider();
-
             this.next = next;
             this.logger = logger;
-            this.userManager = serviceProvider.GetService<UserManager<IdentityUser>>();
         }
 
-        public async Task InvokeAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context, UserManager<IdentityUser> userManager)
         {
             if (context.Request.Path == "/Identity/Account/Login"
                 || context.Request.Path == "/Identity/Account/Logout")

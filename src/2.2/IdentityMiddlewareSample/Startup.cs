@@ -71,7 +71,7 @@ namespace IdentityMiddlewareSample
 
             app.UseAuthentication();
 
-            app.UseMiddleware<EmailMiddleware>(services);
+            app.UseMiddleware<EmailMiddleware>();
 
             app.UseMvc(routes =>
             {
