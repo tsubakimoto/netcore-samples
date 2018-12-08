@@ -38,6 +38,33 @@ namespace MiddlewareSample
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.Map("/abort", HandleAbortMap);
+            app.MapWhen(context =>
+                context.Request.Query["state"] == "success",
+                HandleSuccessMap);
+
+            app.Use(async (context, next) =>
+            {
+                await next.Invoke();
+            });
+
+            app.Use(async (context, next) =>
+            {
+                var state = context.Request.Query["state"];
+                if (state == "abort")
+                {
+                    context.Response.Redirect("/abort");
+                    return;
+                }
+                await next();
+            });
+
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Hello, World!");
+            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -58,6 +85,22 @@ namespace MiddlewareSample
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+        }
+
+        private void HandleAbortMap(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Abort.");
+            });
+        }
+
+        private void HandleSuccessMap(IApplicationBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Success.");
             });
         }
     }
