@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D172C6DD-6FC2-48AF-8154-D465FB64B55D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2", "2.2", "{FF7B96B3-44D5-49BC-9C3B-B711B97C111A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareSample", "src\2.2\MiddlewareSample\MiddlewareSample.csproj", "{37B7E269-857C-4649-9793-4CE5830D1E1F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37B7E269-857C-4649-9793-4CE5830D1E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B7E269-857C-4649-9793-4CE5830D1E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B7E269-857C-4649-9793-4CE5830D1E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B7E269-857C-4649-9793-4CE5830D1E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF7B96B3-44D5-49BC-9C3B-B711B97C111A} = {D172C6DD-6FC2-48AF-8154-D465FB64B55D}
+		{37B7E269-857C-4649-9793-4CE5830D1E1F} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
