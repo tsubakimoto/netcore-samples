@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MiddlewareSample.Middlewares;
 
 namespace MiddlewareSample
 {
@@ -58,6 +59,8 @@ namespace MiddlewareSample
                 }
                 await next();
             });
+
+            app.UseMiddleware<MyMiddleware>();
 
             app.Run(async context =>
             {
