@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MiddlewareSample.Middlewares;
+using MiddlewareSample.Services;
 
 namespace MiddlewareSample
 {
@@ -32,6 +33,7 @@ namespace MiddlewareSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddTransient<IMyService, MyService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
