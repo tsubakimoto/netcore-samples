@@ -33,7 +33,7 @@ namespace MiddlewareSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<IMyService, MyService>();
+            services.AddScoped<IMyService, MyService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
