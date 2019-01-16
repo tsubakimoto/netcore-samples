@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MvcApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.DataProtection;
+using MvcApp.Data;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace MvcApp
 {
@@ -76,6 +72,23 @@ namespace MvcApp
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            app.Map("/allkeys", builder => builder.Run(async context =>
+            {
+                var keyManager = app.ApplicationServices.GetService<IKeyManager>();
+                var allKeys = keyManager.GetAllKeys();
+
+                var sb = new StringBuilder();
+                sb.Append("<ul>");
+                foreach (var key in allKeys)
+                {
+                    sb.Append("<li>");
+                    sb.Append(key.KeyId);
+                    sb.Append("</li>");
+                }
+                sb.Append("</ul>");
+                await context.Response.WriteAsync(sb.ToString());
+            }));
 
             app.UseMvc(routes =>
             {
