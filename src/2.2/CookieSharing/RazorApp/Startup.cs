@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using RazorApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace RazorApp
 {
@@ -33,6 +34,14 @@ namespace RazorApp
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddDataProtection()
+                .SetApplicationName("SharedCookieApp");
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = ".AspNet.SharedCookie";
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
