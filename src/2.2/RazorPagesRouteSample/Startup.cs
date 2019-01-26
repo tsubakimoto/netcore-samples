@@ -36,6 +36,7 @@ namespace RazorPagesRouteSample
                 .AddRazorPagesOptions(options =>
                     {
                         options.Conventions.AddPageRoute("/Privacy", "SitePrivacy/");
+                        options.Conventions.AddPageRoute("/YourVoice", "Voice/{text?}");
                     })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
