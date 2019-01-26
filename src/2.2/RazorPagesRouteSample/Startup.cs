@@ -37,6 +37,9 @@ namespace RazorPagesRouteSample
                     {
                         options.Conventions.AddPageRoute("/Privacy", "SitePrivacy/");
                         options.Conventions.AddPageRoute("/YourVoice", "Voice/{text?}");
+
+                        //options.Conventions.AddPageRoute("/Identity/Account/Login", "Login/"); //Bad option
+                        options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "Login/"); //Good option
                     })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
