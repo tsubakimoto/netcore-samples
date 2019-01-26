@@ -21,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorApp", "src\2.2\CookieS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oidc", "Oidc", "{AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationServer", "src\2.2\Oidc\AuthorizationServer\AuthorizationServer.csproj", "{C2D238AC-892F-4685-AFB5-8FA8FF468B26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationServer", "src\2.2\Oidc\AuthorizationServer\AuthorizationServer.csproj", "{C2D238AC-892F-4685-AFB5-8FA8FF468B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceApi", "src\2.2\Oidc\ResourceApi\ResourceApi.csproj", "{65F0C69C-638B-4C0D-9C46-FD76D7483863}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceApi", "src\2.2\Oidc\ResourceApi\ResourceApi.csproj", "{65F0C69C-638B-4C0D-9C46-FD76D7483863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "src\2.2\Oidc\ClientApp\ClientApp.csproj", "{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "src\2.2\Oidc\ClientApp\ClientApp.csproj", "{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesRouteSample", "src\2.2\RazorPagesRouteSample\RazorPagesRouteSample.csproj", "{C7F7587B-FE01-4B35-9206-2B1434573B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{C2D238AC-892F-4685-AFB5-8FA8FF468B26} = {AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}
 		{65F0C69C-638B-4C0D-9C46-FD76D7483863} = {AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}
 		{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9} = {AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}
+		{C7F7587B-FE01-4B35-9206-2B1434573B1A} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
