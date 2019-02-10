@@ -29,13 +29,23 @@ namespace LoggingSample
                     //logging.AddDebug();
 
                     // Custom logger
+                    //logging.ClearProviders();
+                    //var config = new ColoredConsoleLoggerConfiguration
+                    //{
+                    //    LogLevel = LogLevel.Information,
+                    //    Color = ConsoleColor.Yellow
+                    //};
+                    //logging.AddProvider(new ColoredConsoleLoggerProvider(config));
+
+                    // Custom table logger
                     logging.ClearProviders();
-                    var config = new ColoredConsoleLoggerConfiguration
+                    var config = new TableLoggerConfiguration
                     {
                         LogLevel = LogLevel.Information,
-                        Color = ConsoleColor.Yellow
+                        ConnectionString = hostingContext.Configuration["StorageConnectionString"],
+                        TableName = "mylog"
                     };
-                    logging.AddProvider(new ColoredConsoleLoggerProvider(config));
+                    logging.AddProvider(new TableLoggerProvider(config));
                 })
                 .UseStartup<Startup>();
     }
