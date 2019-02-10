@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceApi", "src\2.2\Oidc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "src\2.2\Oidc\ClientApp\ClientApp.csproj", "{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesRouteSample", "src\2.2\RazorPagesRouteSample\RazorPagesRouteSample.csproj", "{C7F7587B-FE01-4B35-9206-2B1434573B1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesRouteSample", "src\2.2\RazorPagesRouteSample\RazorPagesRouteSample.csproj", "{C7F7587B-FE01-4B35-9206-2B1434573B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSample", "src\2.2\LoggingSample\LoggingSample.csproj", "{58F764FA-4491-477B-AAD9-E99E31A3F282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7F7587B-FE01-4B35-9206-2B1434573B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F764FA-4491-477B-AAD9-E99E31A3F282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F764FA-4491-477B-AAD9-E99E31A3F282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F764FA-4491-477B-AAD9-E99E31A3F282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F764FA-4491-477B-AAD9-E99E31A3F282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +94,7 @@ Global
 		{65F0C69C-638B-4C0D-9C46-FD76D7483863} = {AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}
 		{D9D621B3-68C6-4C0B-B6FE-9CFD2BA3FDD9} = {AD64AFB8-E71B-41BB-B16C-0995FB9C0E60}
 		{C7F7587B-FE01-4B35-9206-2B1434573B1A} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{58F764FA-4491-477B-AAD9-E99E31A3F282} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
