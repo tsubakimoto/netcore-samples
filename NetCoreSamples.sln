@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostedServiceSample", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputFormatSample", "src\2.2\OutputFormatSample\OutputFormatSample.csproj", "{7839AD89-6CC6-4591-B80F-B700C2170B30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBinderSample", "src\2.2\ModelBinderSample\ModelBinderSample.csproj", "{897E84F5-D3A1-4D81-80FF-0084A6270B48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{7839AD89-6CC6-4591-B80F-B700C2170B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7839AD89-6CC6-4591-B80F-B700C2170B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7839AD89-6CC6-4591-B80F-B700C2170B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +115,7 @@ Global
 		{58F764FA-4491-477B-AAD9-E99E31A3F282} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{18F9C127-F91A-4CE6-AD1B-C98045009DBE} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{7839AD89-6CC6-4591-B80F-B700C2170B30} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{897E84F5-D3A1-4D81-80FF-0084A6270B48} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
