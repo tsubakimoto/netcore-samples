@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputFormatSample", "src\2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBinderSample", "src\2.2\ModelBinderSample\ModelBinderSample.csproj", "{897E84F5-D3A1-4D81-80FF-0084A6270B48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionFilterSample", "src\2.2\ActionFilterSample\ActionFilterSample.csproj", "{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897E84F5-D3A1-4D81-80FF-0084A6270B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +122,7 @@ Global
 		{18F9C127-F91A-4CE6-AD1B-C98045009DBE} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{7839AD89-6CC6-4591-B80F-B700C2170B30} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{897E84F5-D3A1-4D81-80FF-0084A6270B48} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
