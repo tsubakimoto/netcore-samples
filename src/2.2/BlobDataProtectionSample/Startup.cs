@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.KeyVault;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.WindowsAzure.Storage;
@@ -33,12 +35,21 @@ namespace BlobDataProtectionSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Create azure storage account container
             var storageAccount = CloudStorageAccount.DevelopmentStorageAccount;
             var client = storageAccount.CreateCloudBlobClient();
             var container = client.GetContainerReference("dpkeys");
             container.CreateIfNotExistsAsync().GetAwaiter().GetResult();
+
+            // Create azure key vault client with MSI
+            var azureServiceTokenProvider = new AzureServiceTokenProvider();
+            var keyVaultClient = new KeyVaultClient(
+                new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
+
+            // Data protection with Azure Blob and Azure KeyVault
             services.AddDataProtection()
-                .PersistKeysToAzureBlobStorage(container, "keys.xml");
+                .PersistKeysToAzureBlobStorage(container, "keys.xml")
+                .ProtectKeysWithAzureKeyVault(keyVaultClient, Configuration["KeyVaultKeyIdentifier"]);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
