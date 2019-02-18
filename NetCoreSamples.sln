@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenFuSample", "src\2.2\GenF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCacheSample", "src\2.2\RedisCacheSample\RedisCacheSample.csproj", "{72F5B8CA-A1D1-478A-948E-488E42C0D295}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobDataProtectionSample", "src\2.2\BlobDataProtectionSample\BlobDataProtectionSample.csproj", "{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{72F5B8CA-A1D1-478A-948E-488E42C0D295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F5B8CA-A1D1-478A-948E-488E42C0D295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F5B8CA-A1D1-478A-948E-488E42C0D295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +143,7 @@ Global
 		{D64A3120-28E1-4BD0-804C-8FEDF82E9C6B} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{C7775D46-FEF4-40D8-A2EC-796903009C50} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{72F5B8CA-A1D1-478A-948E-488E42C0D295} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
