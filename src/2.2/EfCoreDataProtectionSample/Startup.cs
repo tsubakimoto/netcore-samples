@@ -38,7 +38,14 @@ namespace EfCoreDataProtectionSample
                     options.UseSqlServer(Configuration.GetConnectionString("EfCoreDataProtectionSampleContext")));
 
             services.AddDataProtection()
-                .PersistKeysToDbContext<EfCoreDataProtectionSampleContext>();
+               .PersistKeysToDbContext<EfCoreDataProtectionSampleContext>();
+
+            services.AddDistributedSqlServerCache(options =>
+            {
+                options.ConnectionString = Configuration.GetConnectionString("EfCoreDataProtectionSampleContext");
+                options.SchemaName = "dbo";
+                options.TableName = "__Cache";
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
