@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.WindowsAzure.Storage;
 
 namespace BlobDataProtectionSample
 {
@@ -31,6 +33,12 @@ namespace BlobDataProtectionSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var storageAccount = CloudStorageAccount.DevelopmentStorageAccount;
+            var client = storageAccount.CreateCloudBlobClient();
+            var container = client.GetContainerReference("dpkeys");
+            container.CreateIfNotExistsAsync().GetAwaiter().GetResult();
+            services.AddDataProtection()
+                .PersistKeysToAzureBlobStorage(container, "keys.xml");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
