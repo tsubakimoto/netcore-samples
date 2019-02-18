@@ -1,11 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using EfCoreDataProtectionSample.Models;
+﻿using EfCoreDataProtectionSample.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EfCoreDataProtectionSample.Controllers
 {
     public class PersonsController : Controller
     {
-        [HttpGet]
+        private readonly EfCoreDataProtectionSampleContext _context;
+
+        public PersonsController(EfCoreDataProtectionSampleContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
