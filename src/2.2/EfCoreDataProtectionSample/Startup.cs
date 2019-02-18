@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using EfCoreDataProtectionSample.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace EfCoreDataProtectionSample
 {
@@ -33,11 +34,13 @@ namespace EfCoreDataProtectionSample
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             services.AddDbContext<EfCoreDataProtectionSampleContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("EfCoreDataProtectionSampleContext")));
+
+            services.AddDataProtection()
+                .PersistKeysToDbContext<EfCoreDataProtectionSampleContext>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
