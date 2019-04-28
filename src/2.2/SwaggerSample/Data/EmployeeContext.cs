@@ -13,6 +13,6 @@ namespace SwaggerSample.Models
         {
         }
 
-        public DbSet<SwaggerSample.Models.Employee> Employee { get; set; }
+        public DbSet<SwaggerSample.Models.Employee> Employees { get; set; }
     }
 }

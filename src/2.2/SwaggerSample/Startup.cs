@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using SwaggerSample.Models;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace SwaggerSample
 {
@@ -31,6 +32,11 @@ namespace SwaggerSample
 
             services.AddDbContext<EmployeeContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("EmployeeContext")));
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Employee API", Version = "V1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +45,12 @@ namespace SwaggerSample
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "post API V1");
+                });
             }
             else
             {
