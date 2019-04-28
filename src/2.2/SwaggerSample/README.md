@@ -1,0 +1,1 @@
+﻿[Swagger For ASP.NET Core API 2.2](https://www.c-sharpcorner.com/article/swagger-for-asp-net-core-api-2-2/)
