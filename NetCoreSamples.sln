@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D172C6DD-6FC2-48AF-8154-D465FB64B55D}"
 EndProject
@@ -41,11 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActionFilterSample", "src\2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenFuSample", "src\2.2\GenFuSample\GenFuSample.csproj", "{C7775D46-FEF4-40D8-A2EC-796903009C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCacheSample", "src\2.2\RedisCacheSample\RedisCacheSample.csproj", "{72F5B8CA-A1D1-478A-948E-488E42C0D295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisCacheSample", "src\2.2\RedisCacheSample\RedisCacheSample.csproj", "{72F5B8CA-A1D1-478A-948E-488E42C0D295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobDataProtectionSample", "src\2.2\BlobDataProtectionSample\BlobDataProtectionSample.csproj", "{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlobDataProtectionSample", "src\2.2\BlobDataProtectionSample\BlobDataProtectionSample.csproj", "{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCoreDataProtectionSample", "src\2.2\EfCoreDataProtectionSample\EfCoreDataProtectionSample.csproj", "{D803AC47-9984-4D1E-A991-0AA1D7691AB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreDataProtectionSample", "src\2.2\EfCoreDataProtectionSample\EfCoreDataProtectionSample.csproj", "{D803AC47-9984-4D1E-A991-0AA1D7691AB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerSample", "src\2.2\SwaggerSample\SwaggerSample.csproj", "{0367CF01-C6AA-4504-B26F-22C83352A782}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,10 @@ Global
 		{D803AC47-9984-4D1E-A991-0AA1D7691AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D803AC47-9984-4D1E-A991-0AA1D7691AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D803AC47-9984-4D1E-A991-0AA1D7691AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0367CF01-C6AA-4504-B26F-22C83352A782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0367CF01-C6AA-4504-B26F-22C83352A782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0367CF01-C6AA-4504-B26F-22C83352A782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0367CF01-C6AA-4504-B26F-22C83352A782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,6 +157,7 @@ Global
 		{72F5B8CA-A1D1-478A-948E-488E42C0D295} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{4BB6AA6D-70B9-45B5-8B00-A081B77A05BE} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{D803AC47-9984-4D1E-A991-0AA1D7691AB1} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{0367CF01-C6AA-4504-B26F-22C83352A782} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
