@@ -53,7 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solid", "Solid", "{F8F26004
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudSample", "src\2.2\Solid\CrudSample\CrudSample.csproj", "{C9F7684B-C95F-4BBC-913B-BC9684F01337}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudCacheSample", "src\2.2\CrudCacheSample\CrudCacheSample.csproj", "{E7B04ABC-FC6D-4AE9-AA88-65F5FE5DBBE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudCacheSample", "src\2.2\Solid\CrudCacheSample\CrudCacheSample.csproj", "{E7B04ABC-FC6D-4AE9-AA88-65F5FE5DBBE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheRepositorySample", "src\2.2\Solid\CacheRepositorySample\CacheRepositorySample.csproj", "{E0A50396-ECC8-406A-B045-EA53A7075246}"
 EndProject
