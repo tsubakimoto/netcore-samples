@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using CacheRepositorySample.Models;
+using CacheRepositorySample.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using CacheRepositorySample.Models;
+using System.Collections.Generic;
 
 namespace CacheRepositorySample.Controllers
 {
@@ -13,25 +9,19 @@ namespace CacheRepositorySample.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly CacheRepositorySampleContext _context;
+        private readonly IEmployeeRepository employeeRepository;
 
-        public EmployeesController(CacheRepositorySampleContext context)
-        {
-            _context = context;
-        }
+        public EmployeesController(IEmployeeRepository employeeRepository) => this.employeeRepository = employeeRepository;
 
         // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
-        {
-            return await _context.Employee.ToListAsync();
-        }
+        public IEnumerable<Employee> GetEmployee() => employeeRepository.ReadAll();
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee(int id)
+        public ActionResult<Employee> GetEmployee(int id)
         {
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = employeeRepository.ReadOne(id);
 
             if (employee == null)
             {
@@ -43,44 +33,26 @@ namespace CacheRepositorySample.Controllers
 
         // PUT: api/Employees/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee(int id, Employee employee)
+        public IActionResult PutEmployee(int id, Employee employee)
         {
             if (id != employee.EmployeeID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(employee).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EmployeeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
+            employeeRepository.Update(employee);
             return NoContent();
         }
 
         // POST: api/Employees
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public ActionResult<Employee> PostEmployee(Employee employee)
         {
-            _context.Employee.Add(employee);
-            await _context.SaveChangesAsync();
-
+            employeeRepository.Create(employee);
             return CreatedAtAction("GetEmployee", new { id = employee.EmployeeID }, employee);
         }
 
+#if false
         // DELETE: api/Employees/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Employee>> DeleteEmployee(int id)
@@ -96,10 +68,6 @@ namespace CacheRepositorySample.Controllers
 
             return employee;
         }
-
-        private bool EmployeeExists(int id)
-        {
-            return _context.Employee.Any(e => e.EmployeeID == id);
-        }
+#endif
     }
 }

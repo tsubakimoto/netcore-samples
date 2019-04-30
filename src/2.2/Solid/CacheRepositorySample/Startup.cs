@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using CacheRepositorySample.Models;
+using CacheRepositorySample.Repositories;
 
 namespace CacheRepositorySample
 {
@@ -31,6 +32,11 @@ namespace CacheRepositorySample
 
             services.AddDbContext<CacheRepositorySampleContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CacheRepositorySampleContext")));
+
+            //services.AddScoped(typeof(IRead<>), typeof(EfRepository<>));
+            //services.AddScoped(typeof(ICreateUpdate<>), typeof(EfRepository<>));
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
