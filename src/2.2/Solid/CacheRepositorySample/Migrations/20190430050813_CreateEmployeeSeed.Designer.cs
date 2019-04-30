@@ -3,14 +3,16 @@ using CacheRepositorySample.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CacheRepositorySample.Migrations
 {
     [DbContext(typeof(CacheRepositorySampleContext))]
-    partial class CacheRepositorySampleContextModelSnapshot : ModelSnapshot
+    [Migration("20190430050813_CreateEmployeeSeed")]
+    partial class CreateEmployeeSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
