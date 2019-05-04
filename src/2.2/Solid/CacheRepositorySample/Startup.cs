@@ -33,7 +33,7 @@ namespace CacheRepositorySample
             services.AddDbContext<CacheRepositorySampleContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CacheRepositorySampleContext")));
 
-            services.AddMemoryCache();
+            services.AddDistributedMemoryCache();
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<LoggingEmployeeRepository>();

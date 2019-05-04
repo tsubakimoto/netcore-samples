@@ -1,5 +1,7 @@
 ﻿using CacheRepositorySample.Models;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -8,9 +10,9 @@ namespace CacheRepositorySample.Repositories
     public class CacheEmployeeRepository : IEmployeeRepository
     {
         private readonly IEmployeeRepository employeeRepository;
-        private readonly IMemoryCache cache;
+        private readonly IDistributedCache cache;
 
-        public CacheEmployeeRepository(IEmployeeRepository employeeRepository, IMemoryCache cache)
+        public CacheEmployeeRepository(IEmployeeRepository employeeRepository, IDistributedCache cache)
         {
             this.employeeRepository = employeeRepository;
             this.cache = cache;
@@ -19,32 +21,48 @@ namespace CacheRepositorySample.Repositories
         public void Create(Employee entity)
         {
             employeeRepository.Create(entity);
-            cache.Set($"employee_{entity.EmployeeID}", entity, TimeSpan.FromSeconds(3));
+            cache.SetString(
+                $"employee_{entity.EmployeeID}",
+                JsonConvert.SerializeObject(entity),
+                new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(30)));
         }
 
         public IEnumerable<Employee> ReadAll()
         {
-            return cache.GetOrCreate("all_employees", entry =>
-            {
-                entry.SlidingExpiration = TimeSpan.FromSeconds(3);
-                return employeeRepository.ReadAll();
-            });
+            var cachedEmployees = cache.GetString("all_employees");
+            if (!string.IsNullOrWhiteSpace(cachedEmployees))
+                return JsonConvert.DeserializeObject<IEnumerable<Employee>>(cachedEmployees);
+
+            var employees = employeeRepository.ReadAll();
+            cache.SetString(
+                "all_employees",
+                JsonConvert.SerializeObject(employees),
+                new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(30)));
+            return employees;
         }
 
         public Employee ReadOne(int identity)
         {
-            return cache.GetOrCreate($"employee_{identity}", entry =>
-            {
-                entry.SlidingExpiration = TimeSpan.FromSeconds(3);
-                return employeeRepository.ReadOne(identity);
-            });
+            var cachedEmployee = cache.GetString($"employee_{identity}");
+            if (!string.IsNullOrWhiteSpace(cachedEmployee))
+                return JsonConvert.DeserializeObject<Employee>(cachedEmployee);
+
+            var employee = employeeRepository.ReadOne(identity);
+            cache.SetString(
+                $"employee_{identity}",
+                JsonConvert.SerializeObject(employee),
+                new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(30)));
+            return employee;
         }
 
         public void Update(Employee entity)
         {
             employeeRepository.Update(entity);
             cache.Remove($"employee_{entity.EmployeeID}");
-            cache.Set($"employee_{entity.EmployeeID}", entity, TimeSpan.FromSeconds(3));
+            cache.SetString(
+                $"employee_{entity.EmployeeID}",
+                JsonConvert.SerializeObject(entity),
+                new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(30)));
         }
     }
 }
