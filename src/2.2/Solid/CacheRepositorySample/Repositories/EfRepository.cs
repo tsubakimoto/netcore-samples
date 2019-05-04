@@ -1,23 +1,27 @@
 ﻿using CacheRepositorySample.Models;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CacheRepositorySample.Repositories
 {
-    public abstract class EfRepository<TEntity> : IRead<TEntity>, ICreateUpdate<TEntity>
+    public abstract class EfRepository<TEntity> : IRead<TEntity>, ICreateUpdate<TEntity> where TEntity : class
     {
-        private readonly CacheRepositorySampleContext db;
+        protected readonly CacheRepositorySampleContext db;
 
-        public EfRepository(CacheRepositorySampleContext db)
+        public EfRepository(CacheRepositorySampleContext db) => this.db = db;
+
+        public void Create(TEntity entity)
         {
-            this.db = db;
+            db.Set<TEntity>().Add(entity);
+            db.SaveChanges();
         }
-
-        public void Create(TEntity entity) => throw new NotImplementedException();
-        public IEnumerable<TEntity> ReadAll() => throw new NotImplementedException();
-        public TEntity ReadOne(int identity) => throw new NotImplementedException();
-        public void Update(TEntity entity) => throw new NotImplementedException();
+        public IEnumerable<TEntity> ReadAll() => db.Set<TEntity>().AsEnumerable();
+        public TEntity ReadOne(int identity) => db.Set<TEntity>().Find();
+        public void Update(TEntity entity)
+        {
+            db.Entry(entity).State = EntityState.Unchanged;
+            db.SaveChanges();
+        }
     }
 }

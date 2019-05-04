@@ -9,10 +9,14 @@ namespace CacheRepositorySample.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
+        private readonly IEmployeeRepository employeeRepository;
         //private readonly LoggingEmployeeRepository employeeRepository;
-        private readonly CacheEmployeeRepository employeeRepository;
+        //private readonly CacheEmployeeRepository employeeRepository;
 
-        public EmployeesController(CacheEmployeeRepository employeeRepository) => this.employeeRepository = employeeRepository;
+        public EmployeesController(IEmployeeRepository employeeRepository)
+        {
+            this.employeeRepository = employeeRepository;
+        }
 
         // GET: api/Employees
         [HttpGet]

@@ -35,12 +35,9 @@ namespace CacheRepositorySample
 
             services.AddMemoryCache();
 
-            //services.AddScoped(typeof(IRead<>), typeof(EfRepository<>));
-            //services.AddScoped(typeof(ICreateUpdate<>), typeof(EfRepository<>));
-
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            services.AddScoped(typeof(LoggingEmployeeRepository));
-            services.AddScoped(typeof(CacheEmployeeRepository));
+            //services.AddScoped(typeof(LoggingEmployeeRepository));
+            //services.AddScoped(typeof(CacheEmployeeRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
