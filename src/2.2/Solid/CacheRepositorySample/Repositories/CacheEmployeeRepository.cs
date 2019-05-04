@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CacheRepositorySample.Repositories
 {
-    public class CacheEmployeeRepository : IRead<Employee>, ICreateUpdate<Employee>
+    public class CacheEmployeeRepository : IEmployeeRepository
     {
         private readonly IEmployeeRepository employeeRepository;
         private readonly IMemoryCache cache;

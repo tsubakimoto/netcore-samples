@@ -11,7 +11,7 @@ namespace CacheRepositorySample.Controllers
     {
         private readonly IEmployeeRepository employeeRepository;
 
-        public EmployeesController(LoggingEmployeeRepository employeeRepository)
+        public EmployeesController(CacheEmployeeRepository employeeRepository)
         {
             this.employeeRepository = employeeRepository;
         }
