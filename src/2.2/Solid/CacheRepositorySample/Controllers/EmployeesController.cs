@@ -10,10 +10,8 @@ namespace CacheRepositorySample.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeRepository employeeRepository;
-        //private readonly LoggingEmployeeRepository employeeRepository;
-        //private readonly CacheEmployeeRepository employeeRepository;
 
-        public EmployeesController(IEmployeeRepository employeeRepository)
+        public EmployeesController(LoggingEmployeeRepository employeeRepository)
         {
             this.employeeRepository = employeeRepository;
         }

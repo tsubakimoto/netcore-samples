@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CacheRepositorySample.Repositories
 {
-    public class LoggingEmployeeRepository : IRead<Employee>, ICreateUpdate<Employee>
+    public class LoggingEmployeeRepository : IEmployeeRepository
     {
         private readonly IEmployeeRepository employeeRepository;
         private readonly ILogger<LoggingEmployeeRepository> logger;

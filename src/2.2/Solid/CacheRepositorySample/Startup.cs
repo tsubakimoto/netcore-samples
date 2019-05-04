@@ -36,7 +36,7 @@ namespace CacheRepositorySample
             services.AddMemoryCache();
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            //services.AddScoped(typeof(LoggingEmployeeRepository));
+            services.AddScoped(typeof(LoggingEmployeeRepository));
             //services.AddScoped(typeof(CacheEmployeeRepository));
         }
 
