@@ -69,9 +69,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CacheRepositorySample.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultProviderSample", "src\2.2\KeyVaultProviderSample\KeyVaultProviderSample.csproj", "{FF1BE96C-83F0-4D25-A7DF-815C031B9214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConfigurationSample", "src\2.2\AppConfigurationSample\AppConfigurationSample.csproj", "{3B8B0A80-B46E-4FD4-9C09-A37E92E9BE12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppConfigurationSample", "src\2.2\AppConfigurationSample\AppConfigurationSample.csproj", "{3B8B0A80-B46E-4FD4-9C09-A37E92E9BE12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConfigurationConsoleSample", "src\2.2\AppConfigurationConsoleSample\AppConfigurationConsoleSample.csproj", "{68D9AC2C-38B4-4F15-9503-0ED7B29744E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppConfigurationConsoleSample", "src\2.2\AppConfigurationConsoleSample\AppConfigurationConsoleSample.csproj", "{68D9AC2C-38B4-4F15-9503-0ED7B29744E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppConfigurationFunctionSample", "src\2.2\AppConfigurationFunctionSample\AppConfigurationFunctionSample.csproj", "{31314919-B579-47C1-9F4D-1D9C63ECE911}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +189,10 @@ Global
 		{68D9AC2C-38B4-4F15-9503-0ED7B29744E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68D9AC2C-38B4-4F15-9503-0ED7B29744E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68D9AC2C-38B4-4F15-9503-0ED7B29744E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31314919-B579-47C1-9F4D-1D9C63ECE911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31314919-B579-47C1-9F4D-1D9C63ECE911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31314919-B579-47C1-9F4D-1D9C63ECE911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31314919-B579-47C1-9F4D-1D9C63ECE911}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -225,6 +231,7 @@ Global
 		{FF1BE96C-83F0-4D25-A7DF-815C031B9214} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{3B8B0A80-B46E-4FD4-9C09-A37E92E9BE12} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 		{68D9AC2C-38B4-4F15-9503-0ED7B29744E2} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
+		{31314919-B579-47C1-9F4D-1D9C63ECE911} = {FF7B96B3-44D5-49BC-9C3B-B711B97C111A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}

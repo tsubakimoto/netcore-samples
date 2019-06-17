@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AppConfigurationFunctionSample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ConnectionStrings:AppConfig": "Endpoint=https://yuta-aspnetcore-samples.azconfig.io;Id=0-la-s0:P6dc+FOiujY4Fxvo/amg;Secret=JIjZQ3/Ya3v+bzoIcU60Bx0SLPkKkEObIVYY2+0KSlA="
+      }
+    }
+  }
+}
