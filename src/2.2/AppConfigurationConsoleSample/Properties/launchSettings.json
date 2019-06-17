@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AppConfigurationConsoleSample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ConnectionStrings:AppConfig": "<your_connection_string>"
+      }
+    }
+  }
+}
