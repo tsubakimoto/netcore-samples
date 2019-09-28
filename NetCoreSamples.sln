@@ -79,9 +79,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppConfigurationConsoleSamp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.0", "3.0", "{6DCEFD3A-4CE6-41F9-BB3B-E8259A8C0CE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcGreeter", "src\3.0\GrpcGreeter\GrpcGreeter.csproj", "{6C93282D-29C0-4644-816A-A9F7A15A48BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcGreeter", "src\3.0\GrpcGreeter\GrpcGreeter.csproj", "{6C93282D-29C0-4644-816A-A9F7A15A48BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcGreeterClient", "src\3.0\GrpcGreeterClient\GrpcGreeterClient.csproj", "{DD27C9B2-896F-4A1B-8659-9E1807906DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcGreeterClient", "src\3.0\GrpcGreeterClient\GrpcGreeterClient.csproj", "{DD27C9B2-896F-4A1B-8659-9E1807906DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcGreeterWebClient", "src\3.0\GrpcGreeterWebClient\GrpcGreeterWebClient.csproj", "{C47DFF7A-5276-44D0-BBC1-B337C76C8439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,6 +211,10 @@ Global
 		{DD27C9B2-896F-4A1B-8659-9E1807906DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD27C9B2-896F-4A1B-8659-9E1807906DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD27C9B2-896F-4A1B-8659-9E1807906DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47DFF7A-5276-44D0-BBC1-B337C76C8439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47DFF7A-5276-44D0-BBC1-B337C76C8439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47DFF7A-5276-44D0-BBC1-B337C76C8439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47DFF7A-5276-44D0-BBC1-B337C76C8439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -252,6 +258,7 @@ Global
 		{6DCEFD3A-4CE6-41F9-BB3B-E8259A8C0CE6} = {D172C6DD-6FC2-48AF-8154-D465FB64B55D}
 		{6C93282D-29C0-4644-816A-A9F7A15A48BE} = {6DCEFD3A-4CE6-41F9-BB3B-E8259A8C0CE6}
 		{DD27C9B2-896F-4A1B-8659-9E1807906DCD} = {6DCEFD3A-4CE6-41F9-BB3B-E8259A8C0CE6}
+		{C47DFF7A-5276-44D0-BBC1-B337C76C8439} = {6DCEFD3A-4CE6-41F9-BB3B-E8259A8C0CE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67495B07-4963-4C19-9D1D-06D94F4C499A}
