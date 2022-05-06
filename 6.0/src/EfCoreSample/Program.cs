@@ -1,4 +1,10 @@
+global using EfCoreSample.Data;
+global using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SampleDatabaseContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(SampleDatabaseContext))));
 
 // Add services to the container.
 builder.Services.AddRazorPages();
