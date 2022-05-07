@@ -1,5 +1,5 @@
-global using EfCoreSample.Data;
-global using Microsoft.EntityFrameworkCore;
+using EfCoreSample.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
