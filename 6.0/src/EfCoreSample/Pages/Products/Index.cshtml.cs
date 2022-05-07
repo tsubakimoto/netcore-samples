@@ -16,6 +16,7 @@ namespace EfCoreSample.Pages.Products
         private readonly EfCoreSample.Data.SampleDatabaseContext _context;
 
         public string NameSort { get; set; }
+        public string CurrentFilter { get; set; }
 
         public IndexModel(EfCoreSample.Data.SampleDatabaseContext context)
         {
@@ -24,9 +25,11 @@ namespace EfCoreSample.Pages.Products
 
         public IList<Product> Product { get;set; }
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             NameSort = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+            CurrentFilter = searchString;
 
             /*
             Product = await _context.Products
@@ -36,6 +39,11 @@ namespace EfCoreSample.Pages.Products
 
             var productsIQ = from p in _context.Products
                              select p;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productsIQ = productsIQ.Where(p => p.Name.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
